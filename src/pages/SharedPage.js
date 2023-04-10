@@ -1,6 +1,6 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
-import Navbar from "../components/Navlink";
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import Navbar from '../components/Navlink';
 
 const SharedPage = () => (
   <>
