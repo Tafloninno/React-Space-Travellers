@@ -1,0 +1,73 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #fff;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #e8e8e8;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+}
+
+tbody {
+  text-align: center;
+  display: grid;
+}
+
+tbody:hover {
+  cursor: pointer;
+}
+
+.name {
+  width: 6rem;
+}
+
+.btn-group {
+  width: 20rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  align-items: center;
+}
+
+.active-member {
+  background: hsl(205, 74%, 60%);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 0.135rem;
+}
+
+.not-member {
+  background: #696969;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 0.135rem;
+}
+
+.leave-mission {
+  background: none;
+  border: 1px solid #ff0800;
+  border-radius: 3px;
+  padding: 0.433rem;
+  color: #ff0800;
+}
+
+.join-mission {
+  background: none;
+  border: 1px solid #696969;
+  border-radius: 3px;
+  padding: 0.433rem;
+  color: #696969;
+}

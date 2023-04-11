@@ -1,5 +1,10 @@
 import React from 'react';
+import MissionList from '../components/Missions/MissionList';
 
-const Missions = () => <div>missions</div>;
+const Missions = () => (
+  <div className="missions">
+    <MissionList />
+  </div>
+);
 
 export default Missions;
