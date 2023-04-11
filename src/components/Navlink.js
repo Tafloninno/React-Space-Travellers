@@ -11,13 +11,25 @@ const Navlink = () => (
         <h3>Space Travelers&apos; Hub</h3>
       </div>
       <div className="nav">
-        <NavLink to="rockets" className="navlink">
+        <NavLink
+          to="/rockets"
+          activeClassName="active-navlink"
+          className="navlink"
+        >
           Rockets
         </NavLink>
-        <NavLink to="/missions" className="navlink">
+        <NavLink
+          to="/missions"
+          activeClassName="active-navlink"
+          className="navlink"
+        >
           Missions
         </NavLink>
-        <NavLink to="/myprofile" className="navlink">
+        <NavLink
+          to="/myprofile"
+          activeClassName="active-navlink"
+          className="navlink"
+        >
           My Profile
         </NavLink>
       </div>

@@ -28,5 +28,9 @@
 }
 .navlink {
   text-decoration: none;
-  color: hsl(205, 74%, 60%);
+  color: #3f6cff;
+  font-size: 1.275rem;
+}
+.navlink.active {
+  text-decoration: underline;
 }
