@@ -16,6 +16,11 @@ const AllMissions = ({ id, name, desc }) => {
     localStorage.getItem(`mission-${id}`) === 'true' || false,
   );
 
+  const [tableHeader, settableHeader] = useState(false);
+  useEffect(() => {
+    settableHeader(false);
+  }, []);
+
   useEffect(() => {
     localStorage.setItem(`mission-${id}`, joined);
   }, [id, joined]);
@@ -35,11 +40,15 @@ const AllMissions = ({ id, name, desc }) => {
 
   return (
     <table>
-      <thead>
-        <th>Mission</th>
-        <th>Description</th>
-        <th>Status</th>
-      </thead>
+      {tableHeader && (
+        <thead>
+          <tr>
+            <th>Mission</th>
+            <th>Description</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+      )}
       <tr key={id}>
         <td className="name">{name}</td>
         <td className="desc">{desc}</td>

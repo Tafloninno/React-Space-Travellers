@@ -13,8 +13,8 @@ const ReservedMission = () => {
       <ul>
         {reservedMissions.length === 0 ? (
           <p>
-            You have not reserved any missions yet!
-            <Link to="/missions">Check all missions</Link>
+            No missions joined!
+            <Link to="/missions">Join mission</Link>
           </p>
         ) : (
           reservedMissions.map((mission) => (
