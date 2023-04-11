@@ -1,5 +1,12 @@
-import React from 'react';
+import React from "react";
+import ReservedMission from "../components/Missions/ReservedMission";
 
-const Profile = () => <div>my profile</div>;
+const Profile = () => {
+  return (
+    <div>
+      <ReservedMission />
+    </div>
+  );
+};
 
 export default Profile;
