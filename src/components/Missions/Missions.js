@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
-import "./Missions.css";
-import PropTypes from "prop-types";
+import React, { useState, useEffect } from 'react';
+import './Missions.css';
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import {
   cancelMission,
   reserveMission,
   addReservedMission,
   leaveReservedMission,
-} from "../../redux/missions/missionSlice";
-import { useDispatch } from "react-redux";
+} from '../../redux/missions/missionSlice';
 
 const AllMissions = ({ id, name, desc }) => {
   const dispatch = useDispatch();
 
   const [joined, setJoined] = useState(
-    localStorage.getItem(`mission-${id}`) === "true" || false
+    localStorage.getItem(`mission-${id}`) === 'true' || false,
   );
 
   useEffect(() => {
@@ -79,8 +79,8 @@ const AllMissions = ({ id, name, desc }) => {
 
 AllMissions.propTypes = {
   id: PropTypes.string.isRequired,
-  mission_name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
 };
 
 export default AllMissions;

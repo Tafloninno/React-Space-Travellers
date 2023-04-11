@@ -30,7 +30,6 @@ export const leaveReservedMission = (mission) => ({
   type: "missions/leaveReservedMission",
   payload: mission,
 });
-
 const missionSlice = createSlice({
   name: "mission",
   initialState,
@@ -40,40 +39,42 @@ const missionSlice = createSlice({
       const mission = state.missionList.find((mission) => mission.id === id);
       mission.reserved = true;
       state.reservedMissions.push(mission);
+      return { ...state };
     },
     cancelMission: (state, action) => {
       const id = action.payload;
-      state.reservedMissions = state.reservedMissions.filter(
+      const reservedMissions = state.reservedMissions.filter(
         (mission) => mission.id !== id
       );
       const mission = state.missionList.find((mission) => mission.id === id);
       if (mission) {
         mission.reserved = false;
       }
+      return { ...state, reservedMissions };
     },
 
     addReservedMission: (state, action) => {
       const mission = action.payload;
-      state.reservedMissions.push(mission);
+      return {
+        ...state,
+        reservedMissions: [...state.reservedMissions, mission],
+      };
     },
   },
   extraReducers: {
-    [getMissions.pending]: (state) => {
-      state.isLoading = true;
-    },
+    [getMissions.pending]: (state) => ({ ...state, isLoading: true }),
 
-    [getMissions.fulfilled]: (state, action) => {
-      state.isLoading = false;
-      state.missionList = action.payload;
-    },
+    [getMissions.fulfilled]: (state, action) => ({
+      ...state,
+      missionList: action.payload,
+    }),
 
-    [getMissions.rejected]: (state) => {
-      state.isLoading = false;
-    },
+    [getMissions.rejected]: (state) => ({ ...state, isLoading: false }),
 
-    [reserveMission.fulfilled]: (state, action) => {
-      state.reservedMissions.push(action.payload);
-    },
+    [reserveMission.fulfilled]: (state, action) => ({
+      ...state,
+      reservedMissions: [...state.reservedMissions, action.payload],
+    }),
   },
 });
 
