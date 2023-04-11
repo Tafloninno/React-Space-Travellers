@@ -6,6 +6,7 @@ import Rockets from './pages/rockets';
 import Error from './pages/Error';
 import Missions from './pages/missions';
 import Profile from './pages/profile';
+import './App.css';
 
 const App = () => (
   <BrowserRouter>
