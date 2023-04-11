@@ -1,7 +1,7 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import "./navlink.css";
-import logo from "../photo/logo.png";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import './navlink.css';
+import logo from '../photo/logo.png';
 
 const Navlink = () => (
   <>

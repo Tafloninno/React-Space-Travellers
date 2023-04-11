@@ -26,11 +26,18 @@
   display: flex;
   gap: 1rem;
 }
+
 .navlink {
   text-decoration: none;
   color: #3f6cff;
-  font-size: 1.275rem;
+  font-size: 0.9833rem;
 }
+
 .navlink.active {
   text-decoration: underline;
+}
+
+.navlink:last-child {
+  border-left: 2px solid rgb(38, 35, 35);
+  padding-left: 10px;
 }

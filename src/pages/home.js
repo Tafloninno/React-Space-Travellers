@@ -1,5 +1,8 @@
 import React from 'react';
+import Rockets from './rockets';
 
-const Home = () => <div>home</div>;
+const Home = () => {
+  <Rockets />;
+};
 
 export default Home;

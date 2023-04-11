@@ -1,8 +1,8 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import AllMissions from "./Missions";
-import { getMissions } from "../../redux/missions/missionSlice";
-import "./Missions.css";
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import AllMissions from './Missions';
+import { getMissions } from '../../redux/missions/missionSlice';
+import './Missions.css';
 
 const MissionList = () => {
   const dispatch = useDispatch();
