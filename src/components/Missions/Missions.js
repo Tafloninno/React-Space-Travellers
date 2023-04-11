@@ -1,25 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import './Missions.css';
-import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from "react";
+import "./Missions.css";
+import PropTypes from "prop-types";
 import {
   cancelMission,
   reserveMission,
   addReservedMission,
   leaveReservedMission,
-} from '../../redux/missions/missionSlice';
+} from "../../redux/missions/missionSlice";
+import { useDispatch } from "react-redux";
 
 const AllMissions = ({ id, name, desc }) => {
   const dispatch = useDispatch();
 
   const [joined, setJoined] = useState(
-    localStorage.getItem(`mission-${id}`) === 'true' || false,
+    localStorage.getItem(`mission-${id}`) === "true" || false
   );
-
-  const [tableHeader, settableHeader] = useState(false);
-  useEffect(() => {
-    settableHeader(false);
-  }, []);
 
   useEffect(() => {
     localStorage.setItem(`mission-${id}`, joined);
@@ -40,56 +35,49 @@ const AllMissions = ({ id, name, desc }) => {
 
   return (
     <table>
-      {tableHeader && (
-        <thead>
-          <tr>
-            <th>Mission</th>
-            <th>Description</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-      )}
-      <tr key={id}>
-        <td className="name">{name}</td>
-        <td className="desc">{desc}</td>
-        <td className="btn-group">
-          {joined ? (
-            <>
-              <button type="button" className="active-member" disabled>
-                Active Member
-              </button>
-              <button
-                type="button"
-                className="leave-mission"
-                onClick={() => handleCancel(id)}
-              >
-                Leave Mission
-              </button>
-            </>
-          ) : (
-            <>
-              <button type="button" className="not-member" disabled>
-                NOT A MEMBER
-              </button>
-              <button
-                type="button"
-                className="join-mission"
-                onClick={handleReserveClick}
-              >
-                Join Mission
-              </button>
-            </>
-          )}
-        </td>
-      </tr>
+      <tbody>
+        <tr key={id}>
+          <td className="name">{name}</td>
+          <td className="desc">{desc}</td>
+          <td className="btn-group">
+            {joined ? (
+              <>
+                <button type="button" className="active-member" disabled>
+                  Active Member
+                </button>
+                <button
+                  type="button"
+                  className="leave-mission"
+                  onClick={() => handleCancel(id)}
+                >
+                  Leave Mission
+                </button>
+              </>
+            ) : (
+              <>
+                <button type="button" className="not-member" disabled>
+                  NOT A MEMBER
+                </button>
+                <button
+                  type="button"
+                  className="join-mission"
+                  onClick={handleReserveClick}
+                >
+                  Join Mission
+                </button>
+              </>
+            )}
+          </td>
+        </tr>
+      </tbody>
     </table>
   );
 };
 
 AllMissions.propTypes = {
   id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  desc: PropTypes.string.isRequired,
+  mission_name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 export default AllMissions;

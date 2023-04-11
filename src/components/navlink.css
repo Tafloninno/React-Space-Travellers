@@ -26,3 +26,7 @@
   display: flex;
   gap: 1rem;
 }
+.navlink {
+  text-decoration: none;
+  color: hsl(205, 74%, 60%);
+}

@@ -1,7 +1,7 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import './navlink.css';
-import logo from '../photo/logo.png';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import "./navlink.css";
+import logo from "../photo/logo.png";
 
 const Navlink = () => (
   <>
@@ -11,9 +11,15 @@ const Navlink = () => (
         <h3>Space Travelers&apos; Hub</h3>
       </div>
       <div className="nav">
-        <NavLink to="rockets">Rockets</NavLink>
-        <NavLink to="/missions">Missions</NavLink>
-        <NavLink to="/myprofile">My Profile</NavLink>
+        <NavLink to="rockets" className="navlink">
+          Rockets
+        </NavLink>
+        <NavLink to="/missions" className="navlink">
+          Missions
+        </NavLink>
+        <NavLink to="/myprofile" className="navlink">
+          My Profile
+        </NavLink>
       </div>
     </nav>
   </>
