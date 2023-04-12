@@ -8,31 +8,30 @@ const initialState = {
   isLoading: true,
 };
 
-const API_URL = 'https://api.spacexdata.com/v3/missions';
-
+const API_URL = "https://api.spacexdata.com/v3/missions";
 export const getMissions = createAsyncThunk(
-  'missions/fetchMissions',
+  "missions/fetchMissions",
   async (thunkAPI) => {
     try {
       const response = await axios.get(API_URL);
       return response.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue('An Error occurred...!');
+      return thunkAPI.rejectWithValue("An Error occurred...!");
     }
-  },
+  }
 );
 
 export const reserveMission = (mission) => ({
-  type: 'missions/addReservedMission',
+  type: "missions/addReservedMission",
   payload: mission,
 });
 
 export const leaveReservedMission = (mission) => ({
-  type: 'missions/leaveReservedMission',
+  type: "missions/leaveReservedMission",
   payload: mission,
 });
 const missionSlice = createSlice({
-  name: 'mission',
+  name: "mission",
   initialState,
   reducers: {
     joinMission: (state, action) => {
@@ -46,7 +45,7 @@ const missionSlice = createSlice({
     cancelMission: (state, action) => {
       const id = action.payload;
       const reservedMissions = state.reservedMissions.filter(
-        (mission) => mission.id !== id,
+        (mission) => mission.id !== id
       );
       const mission = state.missionList.find((mission) => mission.id === id);
       if (mission) {
@@ -63,6 +62,7 @@ const missionSlice = createSlice({
       };
     },
   },
+
   extraReducers: {
     [getMissions.pending]: (state) => ({ ...state, isLoading: true }),
 
@@ -81,6 +81,7 @@ const missionSlice = createSlice({
   },
 });
 
-export const { joinMission, cancelMission, addReservedMission } = missionSlice.actions;
+export const { joinMission, cancelMission, addReservedMission } =
+  missionSlice.actions;
 
 export default missionSlice.reducer;
