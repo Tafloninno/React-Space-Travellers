@@ -1,9 +1,9 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 const ReservedMission = () => {
   const reservedMissions = useSelector(
-    (state) => state.mission.reservedMissions
+    (state) => state.mission.reservedMissions,
   );
 
   return (
