@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rockets component renders correctly 1`] = `
+<div
+  className="rocket-container"
+>
+  <div
+    className="rocket"
+  >
+    <img
+      alt="falcon1"
+      src="https://www.example.com/falcon1.jpg"
+    />
+    <div
+      className="rocket-detail"
+    >
+      <h2>
+        Falcon 1
+      </h2>
+      <p>
+        The first privately developed liquid-fueled orbital launch vehicle.
+      </p>
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        Reserve Rocket
+      </button>
+    </div>
+  </div>
+  <div
+    className="rocket"
+  >
+    <img
+      alt="falcon9"
+      src="https://www.example.com/falcon9.jpg"
+    />
+    <div
+      className="rocket-detail"
+    >
+      <h2>
+        Falcon 9
+      </h2>
+      <p>
+        <span
+          className="reserve"
+        >
+          Reserved
+        </span>
+        A partially reusable medium-lift launch vehicle designed and manufactured by SpaceX.
+      </p>
+      <button
+        className="cancel-btn"
+        onClick={[Function]}
+        type="button"
+      >
+        Cancel Reservation
+      </button>
+    </div>
+  </div>
+</div>
+`;
