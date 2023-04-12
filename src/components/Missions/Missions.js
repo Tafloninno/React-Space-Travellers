@@ -76,8 +76,8 @@ const AllMissions = ({ id, name, desc }) => {
 
 AllMissions.propTypes = {
   id: PropTypes.string.isRequired,
-  mission_name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
 };
 
 export default AllMissions;
