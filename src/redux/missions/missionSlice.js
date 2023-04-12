@@ -5,7 +5,7 @@ const initialState = {
   reservedMissions: [],
   isLoading: true,
 };
-
+// API
 const API_URL = 'https://api.spacexdata.com/v3/missions';
 
 export const getMissions = createAsyncThunk(
