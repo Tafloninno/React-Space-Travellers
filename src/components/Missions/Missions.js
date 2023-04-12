@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import './Missions.css';
-import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from "react";
+import "./Missions.css";
+import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
 import {
   cancelMission,
   reserveMission,
   addReservedMission,
   leaveReservedMission,
-} from '../../redux/missions/missionSlice';
+} from "../../redux/missions/missionSlice";
 
 const AllMissions = ({ id, name, desc }) => {
   const dispatch = useDispatch();
 
   const [joined, setJoined] = useState(
-    localStorage.getItem(`mission-${id}`) === 'true' || false,
+    localStorage.getItem(`mission-${id}`) === "true" || false
   );
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const AllMissions = ({ id, name, desc }) => {
           <td className="name">{name}</td>
           <td className="desc">{desc}</td>
           <td className="btn-group">
-            {joined ? (
+            {joined && (
               <>
                 <button type="button" className="active-member" disabled>
                   Active Member
@@ -53,7 +53,8 @@ const AllMissions = ({ id, name, desc }) => {
                   Leave Mission
                 </button>
               </>
-            ) : (
+            )}
+            {!joined && (
               <>
                 <button type="button" className="not-member" disabled>
                   NOT A MEMBER
