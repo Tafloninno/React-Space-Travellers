@@ -1,5 +1,6 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+/* eslint-disable */
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const initialState = {
   missionList: [],
@@ -8,7 +9,6 @@ const initialState = {
 };
 
 const API_URL = "https://api.spacexdata.com/v3/missions";
-
 export const getMissions = createAsyncThunk(
   "missions/fetchMissions",
   async (thunkAPI) => {
@@ -62,6 +62,7 @@ const missionSlice = createSlice({
       };
     },
   },
+
   extraReducers: {
     [getMissions.pending]: (state) => ({ ...state, isLoading: true }),
 
