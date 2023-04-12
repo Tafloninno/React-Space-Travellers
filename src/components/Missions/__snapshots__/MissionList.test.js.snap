@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MissionList renders correctly 1`] = `
+<div
+  className="mission-list-container"
+>
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Missions
+        </th>
+        <th>
+          Description
+        </th>
+        <th>
+          Status
+        </th>
+      </tr>
+    </thead>
+  </table>
+  <table
+    className="mission-list-table"
+  >
+    <tbody>
+      <table>
+        <tbody>
+          <tr>
+            <td
+              className="name"
+            >
+              Mission 1
+            </td>
+            <td
+              className="desc"
+            >
+              Mission 1 Description
+            </td>
+            <td
+              className="btn-group"
+            >
+              <button
+                className="not-member"
+                disabled={true}
+                type="button"
+              >
+                NOT A MEMBER
+              </button>
+              <button
+                className="join-mission"
+                onClick={[Function]}
+                type="button"
+              >
+                Join Mission
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <tbody>
+          <tr>
+            <td
+              className="name"
+            >
+              Mission 2
+            </td>
+            <td
+              className="desc"
+            >
+              Mission 2 Description
+            </td>
+            <td
+              className="btn-group"
+            >
+              <button
+                className="not-member"
+                disabled={true}
+                type="button"
+              >
+                NOT A MEMBER
+              </button>
+              <button
+                className="join-mission"
+                onClick={[Function]}
+                type="button"
+              >
+                Join Mission
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </tbody>
+  </table>
+</div>
+`;
