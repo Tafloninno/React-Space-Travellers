@@ -30,7 +30,6 @@ export const leaveReservedMission = (mission) => ({
   type: 'missions/leaveReservedMission',
   payload: mission,
 });
-
 const missionSlice = createSlice({
   name: 'mission',
   initialState,
@@ -42,6 +41,7 @@ const missionSlice = createSlice({
       state.reservedMissions.push(mission);
       return { ...state };
     },
+
     cancelMission: (state, action) => {
       const id = action.payload;
       const reservedMissions = state.reservedMissions.filter(
