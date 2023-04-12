@@ -30,6 +30,7 @@ export const leaveReservedMission = (mission) => ({
   type: 'missions/leaveReservedMission',
   payload: mission,
 });
+
 const missionSlice = createSlice({
   name: 'mission',
   initialState,
