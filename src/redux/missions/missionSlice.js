@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
 
 const initialState = {
   missionList: [],
@@ -13,8 +12,12 @@ export const getMissions = createAsyncThunk(
   'missions/fetchMissions',
   async (thunkAPI) => {
     try {
-      const response = await axios.get(API_URL);
-      return response.data;
+      const response = await fetch(API_URL);
+      if (!response.ok) {
+        throw new Error('An Error occurred...!');
+      }
+      const data = await response.json();
+      return data;
     } catch (error) {
       return thunkAPI.rejectWithValue('An Error occurred...!');
     }
@@ -30,6 +33,7 @@ export const leaveReservedMission = (mission) => ({
   type: 'missions/leaveReservedMission',
   payload: mission,
 });
+
 const missionSlice = createSlice({
   name: 'mission',
   initialState,

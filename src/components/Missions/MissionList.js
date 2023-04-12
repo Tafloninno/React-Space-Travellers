@@ -9,7 +9,7 @@ const MissionList = () => {
   const { missionList, isLoading } = useSelector((store) => store.mission);
   useEffect(() => {
     dispatch(getMissions());
-  }, []);
+  }, [dispatch]);
 
   if (isLoading) {
     return <div>Loading missions...Please Wait!</div>;
